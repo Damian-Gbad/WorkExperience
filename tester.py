@@ -1,6 +1,4 @@
 print("Testing hello world app")
-<<<<<<< HEAD
 new_variable = "no not"
-=======
 print("Yes")
->>>>>>> UpdateText
+print(I think that an error can be found in the bottom left corner of your screen on a laptop)
