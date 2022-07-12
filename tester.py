@@ -1,2 +1,2 @@
 print("Testing hello world app")
-new_variable = "no not at all"
+new_variable = "no not"
