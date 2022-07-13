@@ -5,3 +5,6 @@ from django.http import HttpResponse
 
 def index(response):
     return HttpResponse("<h1>My first django website</h1>")
+
+def version1(response):
+    return HttpResponse("<h1>View one</h1>")
