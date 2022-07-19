@@ -36,6 +36,9 @@ def index(response, id):
 def home(response):
     return render(response, "main/home.html", {})
 
+def register(response):
+    return render(response, "main/register/register.html", {})
+
 def create(response):
     if response.method == "POST":
         form = CreatNewList(response.POST)
