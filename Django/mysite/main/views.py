@@ -36,6 +36,11 @@ def index(response, id):
 def home(response):
     return render(response, "main/home.html", {})
 
+# def view(response):
+#    all_lists = ToDoList.objects.all()
+#    count = 1
+#    return render(response, "main/view_list.html", {"all_lists":all_lists, "count":count})
+
 def register(response):
     return render(response, "main/register/register.html", {})
 
@@ -48,7 +53,7 @@ def create(response):
             t = ToDoList(name=n)
             t.save()
 
-        return HttpResponseRedirect("/%i" %t.id)
+            return HttpResponseRedirect("/%i" %t.id)
 
     else:
         form = CreatNewList()

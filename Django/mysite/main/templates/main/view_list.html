@@ -1,0 +1,17 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+View your all of your ToDoLists
+{% endblock %}
+
+{% block content %}
+
+{% for item in all_lists %}
+        {{ count|add:"1" }}
+
+
+        <h3> <a href="{{count}}/">  {{count}}</a>  </h3>
+
+{% endfor %}
+<h4>{{all_lists}}</h4>
+{% endblock %}
