@@ -5,13 +5,11 @@ View your all of your ToDoLists
 {% endblock %}
 
 {% block content %}
+        {% for td in jeff %}
+                <p> <a href="/{{td.id}}"></a>{{td.name}}</p>
+                {{jeff}}
 
-{% for item in all_lists %}
-        {{ count|add:"1" }}
-
-
-        <h3> <a href="{{count}}/">  {{count}}</a>  </h3>
-
-{% endfor %}
-<h4>{{all_lists}}</h4>
+        {% endfor %}
+        {{td.id}}
+        yellow
 {% endblock %}

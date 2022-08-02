@@ -36,15 +36,16 @@ def index(response, id):
 def home(response):
     return render(response, "main/home.html", {})
 
-# def view(response):
-#    all_lists = ToDoList.objects.all()
-#    count = 1
-#    return render(response, "main/view_list.html", {"all_lists":all_lists, "count":count})
+def view(response):
+   all_lists = ToDoList.objects.all()
+   count = 1
+   return render(response, "main/view_list.html", {"all_lists":all_lists, "count":count})
 
 def register(response):
     return render(response, "main/register/register.html", {})
 
 def create(response):
+    jeff = response.user.todolist.all
     if response.method == "POST":
         form = CreatNewList(response.POST)
 
@@ -52,10 +53,11 @@ def create(response):
             n = form.cleaned_data["name"]
             t = ToDoList(name=n)
             t.save()
+            response.user.todolist.add(t)
 
             return HttpResponseRedirect("/%i" %t.id)
 
     else:
         form = CreatNewList()
-    return render(response, "main/create.html", {"form":form})
+    return render(response, "main/create.html", {"form":form, "jeff":jeff})
 
